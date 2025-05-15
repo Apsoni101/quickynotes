@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1089664415736",
+    "project_id": "quickynotes-12b40",
+    "storage_bucket": "quickynotes-12b40.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1089664415736:android:f269b3fadce171efa7c80d",
+        "android_client_info": {
+          "package_name": "com.ap.quicky_notes"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDS0Lo6fB-cSXG5Jj0LRVX8L1gbKowXXdo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
