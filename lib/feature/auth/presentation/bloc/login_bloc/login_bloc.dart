@@ -22,6 +22,18 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     final Emitter<AuthState> emit,
   ) async {
     emit(AuthLoading());
+    final RegExp emailRegex = RegExp(r"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$");
+    final RegExp passwordRegex = RegExp(r'^.{6,}$');
+
+    if (!emailRegex.hasMatch(event.email)) {
+      emit(InvalidEmail());
+      return;
+    }
+
+    if (!passwordRegex.hasMatch(event.password)) {
+      emit(InvalidPassword());
+      return;
+    }
 
     final Either<Failure, UserEntity> result = await authUseCase
         .signInWithEmail(event.email, event.password);

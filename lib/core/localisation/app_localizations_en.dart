@@ -27,7 +27,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get emailRequired => 'Email is required';
 
   @override
-  String get invalidEmail => 'Please enter a valid email';
+  String get invalidEmail => 'Invalid email format';
 
   @override
   String get password => 'Password';
@@ -124,4 +124,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get subtitle => '⚡ Fast. Simple. Organized. 📋';
+
+  @override
+  String get welcome => 'Welcome to Quicky Notes';
+
+  @override
+  String get shortPassword => 'Password must be at least 6 characters';
 }

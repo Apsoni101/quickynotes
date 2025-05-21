@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:quicky_notes/core/services/error/failure.dart';
-import 'package:quicky_notes/core/services/firebase_auth%20_service.dart';
+import 'package:quicky_notes/core/services/firebase/firebase_auth%20_service.dart';
 import 'package:quicky_notes/feature/auth/data/models/user_model.dart';
 
 /// abstract auth data source calling firebaseAuth service
@@ -48,13 +48,26 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
       email,
       password,
     );
-    return result.map(UserModel.fromFirebaseUser);
+    return result.fold(Left.new, (final User user) {
+      try {
+        final UserModel userModel = UserModel.fromFirebaseUser(user);
+        return Right(userModel);
+      } catch (e) {
+        return Left(Failure("User mapping failed: $e"));
+      }
+    });
   }
 
   @override
   Future<Either<Failure, UserModel>> signInWithGoogle() async {
     final Either<Failure, User> result = await authService.signInWithGoogle();
-    return result.map(UserModel.fromFirebaseUser);
+    return result.fold(Left.new, (final User user) {
+      try {
+        return Right(UserModel.fromFirebaseUser(user));
+      } catch (e) {
+        return Left(Failure("User mapping failed: $e"));
+      }
+    });
   }
 
   @override
@@ -69,7 +82,13 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
       email,
       password,
     );
-    return result.map(UserModel.fromFirebaseUser);
+    return result.fold(Left.new, (final User user) {
+      try {
+        return Right(UserModel.fromFirebaseUser(user));
+      } catch (e) {
+        return Left(Failure("User mapping failed: $e"));
+      }
+    });
   }
 
   @override

@@ -136,7 +136,7 @@ abstract class AppLocalizations {
   /// No description provided for @invalidEmail.
   ///
   /// In en, this message translates to:
-  /// **'Please enter a valid email'**
+  /// **'Invalid email format'**
   String get invalidEmail;
 
   /// No description provided for @password.
@@ -330,6 +330,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'⚡ Fast. Simple. Organized. 📋'**
   String get subtitle;
+
+  /// No description provided for @welcome.
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome to Quicky Notes'**
+  String get welcome;
+
+  /// No description provided for @shortPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Password must be at least 6 characters'**
+  String get shortPassword;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

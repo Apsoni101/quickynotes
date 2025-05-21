@@ -1,10 +1,10 @@
 import 'package:get_it/get_it.dart';
 import 'package:quicky_notes/core/constants/app_constants.dart';
 import 'package:quicky_notes/core/navigation/auth_guard.dart';
-import 'package:quicky_notes/core/services/fcm_service.dart';
-import 'package:quicky_notes/core/services/firebase_auth%20_service.dart';
-import 'package:quicky_notes/core/services/firebase_firestore_service.dart';
-import 'package:quicky_notes/core/services/notification_service.dart';
+import 'package:quicky_notes/core/services/notification/fcm_service.dart';
+import 'package:quicky_notes/core/services/firebase/firebase_auth%20_service.dart';
+import 'package:quicky_notes/core/services/firebase/firebase_firestore_service.dart';
+import 'package:quicky_notes/core/services/notification/notification_service.dart';
 import 'package:quicky_notes/feature/auth/data/data_sources/auth_remote_datasource.dart';
 import 'package:quicky_notes/feature/auth/data/repositories/auth_repo_impl.dart';
 import 'package:quicky_notes/feature/auth/domain/repositories/auth_repo.dart';

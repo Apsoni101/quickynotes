@@ -71,32 +71,14 @@ class _RegisterPageState extends State<RegisterPage> {
                     labelText: loc.email,
                     hintText: loc.enterEmail,
                     keyboardType: TextInputType.emailAddress,
-                    validator: (final String? value) {
-                      if (value == null || value.isEmpty) {
-                        return loc.emailRequired;
-                      }
-                      if (!RegExp(
-                        r'^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$',
-                      ).hasMatch(value)) {
-                        return loc.invalidEmail;
-                      }
-                      return null;
-                    },
+
                   ),
                   CustomTextField(
                     textEditingController: _passwordController,
                     labelText: loc.password,
                     hintText: loc.enterPassword,
                     obscureText: true,
-                    validator: (final String? value) {
-                      if (value == null || value.isEmpty) {
-                        return loc.passwordRequired;
-                      }
-                      if (value.length < 6) {
-                        return loc.passwordTooShort;
-                      }
-                      return null;
-                    },
+
                   ),
                   BlocBuilder<RegisterBloc, RegisterState>(
                     builder: (

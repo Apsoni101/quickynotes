@@ -27,7 +27,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get emailRequired => 'البريد الإلكتروني مطلوب';
 
   @override
-  String get invalidEmail => 'يرجى إدخال بريد إلكتروني صحيح';
+  String get invalidEmail => 'تنسيق البريد الإلكتروني غير صالح';
 
   @override
   String get password => 'كلمة المرور';
@@ -124,4 +124,10 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get subtitle => '⚡ سريع. بسيط. منظم. 📋';
+
+  @override
+  String get welcome => 'مرحبًا بك في كويكي نوتس';
+
+  @override
+  String get shortPassword => 'يجب أن تكون كلمة المرور 6 أحرف على الأقل';
 }

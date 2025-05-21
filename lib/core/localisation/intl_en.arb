@@ -37,6 +37,8 @@
   "changeLanguage": "Change Language",
   "adding": "➕ Adding...",
   "loading": "🔄 Loading...",
-  "subtitle": "⚡ Fast. Simple. Organized. 📋"
-
+  "subtitle": "⚡ Fast. Simple. Organized. 📋",
+  "welcome": "Welcome to Quicky Notes",
+  "invalidEmail": "Invalid email format",
+  "shortPassword": "Password must be at least 6 characters"
 }

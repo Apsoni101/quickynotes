@@ -27,7 +27,7 @@ class AppLocalizationsHi extends AppLocalizations {
   String get emailRequired => 'ईमेल आवश्यक है';
 
   @override
-  String get invalidEmail => 'कृपया मान्य ईमेल दर्ज करें';
+  String get invalidEmail => 'अमान्य ईमेल प्रारूप';
 
   @override
   String get password => 'पासवर्ड';
@@ -124,4 +124,10 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get subtitle => '⚡ तेज़। सरल। व्यवस्थित। 📋';
+
+  @override
+  String get welcome => 'क्विकी नोट्स में आपका स्वागत है';
+
+  @override
+  String get shortPassword => 'पासवर्ड कम से कम 6 अक्षरों का होना चाहिए';
 }

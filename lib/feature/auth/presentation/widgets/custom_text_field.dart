@@ -10,7 +10,6 @@ class CustomTextField extends StatelessWidget {
     super.key,
     this.obscureText = false,
     this.keyboardType,
-    this.validator,
   });
 
   /// Controller for managing the input text.
@@ -28,15 +27,12 @@ class CustomTextField extends StatelessWidget {
   /// Input type (email, number, etc).
   final TextInputType? keyboardType;
 
-  /// Field validator function.
-  final String? Function(String?)? validator;
 
   @override
-  Widget build(final BuildContext context) => TextFormField(
+  Widget build(final BuildContext context) => TextField(
     controller: textEditingController,
     obscureText: obscureText,
     keyboardType: keyboardType,
-    validator: validator,
     decoration: InputDecoration(
       hintText: hintText,
       labelText: labelText,

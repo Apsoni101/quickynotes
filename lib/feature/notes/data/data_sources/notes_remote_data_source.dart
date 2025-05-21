@@ -1,8 +1,8 @@
 import 'package:dartz/dartz.dart';
 import 'package:quicky_notes/core/constants/app_constants.dart';
 import 'package:quicky_notes/core/services/error/failure.dart';
-import 'package:quicky_notes/core/services/firebase_firestore_service.dart';
-import 'package:quicky_notes/core/services/notification_service.dart';
+import 'package:quicky_notes/core/services/firebase/firebase_firestore_service.dart';
+import 'package:quicky_notes/core/services/notification/notification_service.dart';
 import 'package:quicky_notes/feature/notes/data/models/note_model.dart';
 
 abstract class NotesRemoteDataSource {

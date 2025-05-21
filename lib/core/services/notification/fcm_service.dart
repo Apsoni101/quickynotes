@@ -9,7 +9,7 @@ import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:googleapis_auth/auth_io.dart';
 import 'package:quicky_notes/core/constants/app_assets.dart';
 import 'package:quicky_notes/core/services/error/failure.dart';
-import 'package:quicky_notes/core/services/notification_service.dart';
+import 'package:quicky_notes/core/services/notification/notification_service.dart';
 
 class FCMService implements NotificationService {
   FCMService({required this.projectId});

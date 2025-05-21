@@ -19,3 +19,5 @@ final class AuthFailure extends AuthState {
 
   final String message;
 }
+final class InvalidEmail extends AuthState {}
+final class InvalidPassword extends AuthState {}
