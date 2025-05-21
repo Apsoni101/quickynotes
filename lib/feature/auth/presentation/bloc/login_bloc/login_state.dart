@@ -1,4 +1,4 @@
-part of 'auth_bloc.dart';
+part of 'login_bloc.dart';
 
 @immutable
 sealed class AuthState extends Equatable {

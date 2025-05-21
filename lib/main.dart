@@ -3,16 +3,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quicky_notes/core/di/app_injector.dart';
 import 'package:quicky_notes/core/navigation/app_router.dart';
+import 'package:quicky_notes/core/services/notification_service.dart';
 import 'package:quicky_notes/feature/settings/presentation/manager/settings_bloc.dart';
 import 'package:quicky_notes/firebase_options.dart';
-import 'package:quicky_notes/localisation/app_localizations.dart';
+import 'package:quicky_notes/core/localisation/app_localizations.dart';
 
 /// The main entry point of the Flutter application.
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   await AppInjector.setUp();
-
+  await AppInjector.getIt<NotificationService>().initialize();
   runApp(MyApp());
 }
 
@@ -38,8 +39,7 @@ class MyApp extends StatelessWidget {
                 routerConfig: _appRouter.config(),
                 supportedLocales: AppLocalizations.supportedLocales,
                 localizationsDelegates: AppLocalizations.localizationsDelegates,
-                debugShowCheckedModeBanner: false
-                ,
+                debugShowCheckedModeBanner: false,
               ),
     ),
   );

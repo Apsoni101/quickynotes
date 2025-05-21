@@ -8,19 +8,20 @@ part 'settings_event.dart';
 part 'settings_state.dart';
 
 class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
-  final SettingsUseCase useCase;
-
   SettingsBloc({required this.useCase})
     : super(
-        const SettingsState(themeMode: ThemeMode.light, locale: Locale('en')),
+        SettingsState(
+          themeMode: useCase.getThemeMode(),
+          locale: useCase.getLocale(),
+        ),
       ) {
     on<ChangeThemeEvent>((
       final ChangeThemeEvent event,
       final Emitter<SettingsState> emit,
     ) async {
-      final newTheme =
+      final ThemeMode newTheme =
           state.themeMode == ThemeMode.light ? ThemeMode.dark : ThemeMode.light;
-      await useCase.updateThemeMode(newTheme);
+      await useCase.saveThemeMode(newTheme);
       emit(state.copyWith(themeMode: newTheme));
     });
 
@@ -28,8 +29,9 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
       final ChangeLanguageEvent event,
       final Emitter<SettingsState> emit,
     ) async {
-      await useCase.updateLocale(event.locale);
+      await useCase.saveLocale(event.locale);
       emit(state.copyWith(locale: event.locale));
     });
   }
+  final SettingsUseCase useCase;
 }

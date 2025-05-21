@@ -1,14 +1,13 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:quicky_notes/core/constants/app_assets.dart';
 import 'package:quicky_notes/core/constants/app_text_styles.dart';
 import 'package:quicky_notes/core/navigation/app_router.gr.dart';
-import 'package:quicky_notes/localisation/app_localizations.dart';
+import 'package:quicky_notes/core/localisation/app_localizations.dart';
 
-/// Simple splash screen
 @RoutePage()
 class SplashPage extends StatelessWidget {
-  /// Creates an instance of splash.
   const SplashPage({super.key});
 
   @override
@@ -18,19 +17,16 @@ class SplashPage extends StatelessWidget {
     });
 
     return Scaffold(
-      body: Stack(
-        fit: StackFit.expand,
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          // Background image
+          Lottie.asset(AppAssets.splash),
+          Text(
+            AppLocalizations.of(context).appName,
+            style: AppTextStyles.headline1,
+          ),
           Image.asset(AppAssets.splashBg, fit: BoxFit.cover),
 
-          // Centered app name text
-          Align(
-            child: Text(
-              AppLocalizations.of(context).appName,
-              style: AppTextStyles.headline1,
-            ),
-          ),
         ],
       ),
     );

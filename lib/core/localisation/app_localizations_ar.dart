@@ -115,4 +115,13 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get changeLanguage => 'تغيير اللغة';
+
+  @override
+  String get adding => '➕ جاري الإضافة...';
+
+  @override
+  String get loading => '🔄 جارٍ التحميل...';
+
+  @override
+  String get subtitle => '⚡ سريع. بسيط. منظم. 📋';
 }

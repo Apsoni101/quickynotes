@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:quicky_notes/core/error/failure.dart';
+import 'package:quicky_notes/core/services/error/failure.dart';
 import 'package:quicky_notes/feature/notes/domain/entities/note_entity.dart';
 
 abstract class NotesRepository {

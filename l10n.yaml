@@ -1,5 +1,5 @@
 synthetic-package: false
 nullable-getter: false
-arb-dir: lib/localisation
+arb-dir: lib/core/localisation
 template-arb-file: intl_en.arb
 output-localization-file: app_localizations.dart

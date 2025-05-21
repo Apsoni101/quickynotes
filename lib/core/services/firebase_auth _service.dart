@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:quicky_notes/core/error/failure.dart';
+import 'package:quicky_notes/core/services/error/failure.dart';
 
 ///firebase service similar to network service
 class FirebaseAuthService {

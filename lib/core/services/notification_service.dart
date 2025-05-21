@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:quicky_notes/core/error/failure.dart';
+import 'package:quicky_notes/core/services/error/failure.dart';
 
 abstract class NotificationService {
   Future<void> initialize();

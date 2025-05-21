@@ -115,4 +115,13 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get changeLanguage => 'भाषा बदलें';
+
+  @override
+  String get adding => '➕ जोड़ा जा रहा है...';
+
+  @override
+  String get loading => '🔄 लोड हो रहा है...';
+
+  @override
+  String get subtitle => '⚡ तेज़। सरल। व्यवस्थित। 📋';
 }

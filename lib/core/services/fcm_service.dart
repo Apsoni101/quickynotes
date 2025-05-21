@@ -8,7 +8,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:googleapis_auth/auth_io.dart';
 import 'package:quicky_notes/core/constants/app_assets.dart';
-import 'package:quicky_notes/core/error/failure.dart';
+import 'package:quicky_notes/core/services/error/failure.dart';
 import 'package:quicky_notes/core/services/notification_service.dart';
 
 class FCMService implements NotificationService {
@@ -18,7 +18,7 @@ class FCMService implements NotificationService {
   final String projectId;
 
   static final FlutterLocalNotificationsPlugin _localNotificationsPlugin =
-      FlutterLocalNotificationsPlugin();
+  FlutterLocalNotificationsPlugin();
 
   @override
   Future<void> initialize() async {
@@ -33,7 +33,7 @@ class FCMService implements NotificationService {
 
   Future<void> _initializeLocalNotifications() async {
     const AndroidInitializationSettings androidSettings =
-        AndroidInitializationSettings('@mipmap/ic_launcher');
+    AndroidInitializationSettings('@mipmap/ic_launcher');
     const InitializationSettings settings = InitializationSettings(
       android: androidSettings,
     );
@@ -47,14 +47,14 @@ class FCMService implements NotificationService {
   }
 
   static Future<void> _firebaseMessagingBackgroundHandler(
-    final RemoteMessage message,
-  ) async {
+      final RemoteMessage message,
+      ) async {
     await _showLocalNotification(message);
   }
 
   static Future<void> _showLocalNotification(
-    final RemoteMessage message,
-  ) async {
+      final RemoteMessage message,
+      ) async {
     final RemoteNotification? notification = message.notification;
     final AndroidNotification? android = message.notification?.android;
 
@@ -68,7 +68,7 @@ class FCMService implements NotificationService {
             'default_channel_id',
             'Default Channel',
             channelDescription:
-                'Used for displaying FCM notifications in foreground',
+            'Used for displaying FCM notifications in foreground',
             importance: Importance.max,
             priority: Priority.high,
           ),
@@ -118,7 +118,7 @@ class FCMService implements NotificationService {
     final Map<String, dynamic> serviceAccount = json.decode(jsonStr);
 
     final ServiceAccountCredentials credentials =
-        ServiceAccountCredentials.fromJson(serviceAccount);
+    ServiceAccountCredentials.fromJson(serviceAccount);
 
     final List<String> scopes = <String>[
       'https://www.googleapis.com/auth/firebase.messaging',

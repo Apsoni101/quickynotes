@@ -16,7 +16,7 @@ class NotesListingPageBody extends StatelessWidget {
 
   @override
   Widget build(final BuildContext context) => ListView.builder(
-    padding: const EdgeInsets.all(12),
+    padding: const EdgeInsets.symmetric(horizontal: 12,vertical: 24),
     itemCount: notes.length,
     itemBuilder: (final BuildContext context, final int index) {
       final NoteEntity note = notes[index];

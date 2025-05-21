@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:quicky_notes/core/error/failure.dart';
+import 'package:quicky_notes/core/services/error/failure.dart';
 import 'package:quicky_notes/feature/notes/data/data_sources/notes_remote_data_source.dart';
 import 'package:quicky_notes/feature/notes/data/models/note_model.dart';
 import 'package:quicky_notes/feature/notes/domain/entities/note_entity.dart';

@@ -1,12 +1,14 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:lottie/lottie.dart';
+import 'package:quicky_notes/core/constants/app_assets.dart';
 import 'package:quicky_notes/core/constants/app_text_styles.dart';
 import 'package:quicky_notes/core/di/app_injector.dart';
 import 'package:quicky_notes/feature/auth/presentation/bloc/register_bloc/register_bloc.dart';
 import 'package:quicky_notes/feature/auth/presentation/widgets/custom_text_field.dart';
 import 'package:quicky_notes/feature/auth/presentation/widgets/google_sign_in_button.dart';
-import 'package:quicky_notes/localisation/app_localizations.dart';
+import 'package:quicky_notes/core/localisation/app_localizations.dart';
 
 @RoutePage()
 class RegisterPage extends StatefulWidget {
@@ -102,7 +104,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       final RegisterState state,
                     ) {
                       if (state is RegisterLoading) {
-                        return const CircularProgressIndicator();
+                        return Lottie.asset(AppAssets.loading);
                       }
                       return ElevatedButton(
                         onPressed: () {

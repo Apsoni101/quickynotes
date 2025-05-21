@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:quicky_notes/core/error/failure.dart';
+import 'package:quicky_notes/core/services/error/failure.dart';
 import 'package:quicky_notes/core/services/firebase_auth%20_service.dart';
 import 'package:quicky_notes/feature/auth/data/models/user_model.dart';
 

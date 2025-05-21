@@ -34,5 +34,9 @@
   "languageEnglish": "English",
   "languageHindi": "Hindi",
   "languageArabic": "Arabic",
-  "changeLanguage": "Change Language"
+  "changeLanguage": "Change Language",
+  "adding": "➕ Adding...",
+  "loading": "🔄 Loading...",
+  "subtitle": "⚡ Fast. Simple. Organized. 📋"
+
 }

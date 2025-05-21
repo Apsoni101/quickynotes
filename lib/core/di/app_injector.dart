@@ -5,12 +5,11 @@ import 'package:quicky_notes/core/services/fcm_service.dart';
 import 'package:quicky_notes/core/services/firebase_auth%20_service.dart';
 import 'package:quicky_notes/core/services/firebase_firestore_service.dart';
 import 'package:quicky_notes/core/services/notification_service.dart';
-import 'package:quicky_notes/core/utlis/shared_prefs.dart';
 import 'package:quicky_notes/feature/auth/data/data_sources/auth_remote_datasource.dart';
 import 'package:quicky_notes/feature/auth/data/repositories/auth_repo_impl.dart';
 import 'package:quicky_notes/feature/auth/domain/repositories/auth_repo.dart';
 import 'package:quicky_notes/feature/auth/domain/use_cases/auth_usecase.dart';
-import 'package:quicky_notes/feature/auth/presentation/bloc/auth_bloc.dart';
+import 'package:quicky_notes/feature/auth/presentation/bloc/login_bloc/login_bloc.dart';
 import 'package:quicky_notes/feature/auth/presentation/bloc/register_bloc/register_bloc.dart';
 import 'package:quicky_notes/feature/notes/data/data_sources/notes_remote_data_source.dart';
 import 'package:quicky_notes/feature/notes/data/repositories/notes_repository_impl.dart';
@@ -33,20 +32,17 @@ class AppInjector {
 
   ///responsible for setting up ,this will be called on main
   static Future<void> setUp() async {
-
-    final SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
-    final SharedPrefs sharedPrefs = SharedPrefs(sharedPreferences);
+    final SharedPreferences sharedPrefs = await SharedPreferences.getInstance();
 
     getIt
       //core services
+      ..registerLazySingleton(() => sharedPrefs)
       ..registerLazySingleton(FirebaseAuthService.new)
       ..registerLazySingleton(FirebaseFirestoreService.new)
       ..registerLazySingleton<NotificationService>(
         () => FCMService(projectId: AppsConstants.projectId),
       )
-      ..registerLazySingleton(() => sharedPrefs)
-
-    //auth feature
+      //auth feature
       ..registerLazySingleton<AuthRemoteDataSource>(
         () =>
             AuthRemoteDataSourceImpl(authService: getIt<FirebaseAuthService>()),
@@ -93,16 +89,18 @@ class AppInjector {
       )
       //settings
       ..registerLazySingleton<SettingsLocalDataSource>(
-            () => SettingsLocalDataSource(sharedPrefs: getIt<SharedPrefs>()),
+        () => SettingsLocalDataSourceImpl(
+          sharedPrefs: getIt<SharedPreferences>(),
+        ),
       )
       ..registerLazySingleton<SettingsRepository>(
-            () => SettingsRepositoryImpl(local: getIt<SettingsLocalDataSource>()),
+        () => SettingsRepositoryImpl(local: getIt<SettingsLocalDataSource>()),
       )
       ..registerLazySingleton<SettingsUseCase>(
-            () => SettingsUseCase(repository: getIt<SettingsRepository>()),
+        () => SettingsUseCase(repository: getIt<SettingsRepository>()),
       )
       ..registerFactory<SettingsBloc>(
-            () => SettingsBloc(useCase: getIt<SettingsUseCase>()),
+        () => SettingsBloc(useCase: getIt<SettingsUseCase>()),
       );
   }
 }

@@ -4,7 +4,7 @@ sealed class SettingsEvent extends Equatable {
   const SettingsEvent();
 
   @override
-  List<Object?> get props => [];
+  List<Object?> get props => <Object?>[];
 }
 
 final class ChangeThemeEvent extends SettingsEvent {
@@ -12,10 +12,9 @@ final class ChangeThemeEvent extends SettingsEvent {
 }
 
 final class ChangeLanguageEvent extends SettingsEvent {
+  const ChangeLanguageEvent(this.locale);
   final Locale locale;
 
-  const ChangeLanguageEvent(this.locale);
-
   @override
-  List<Object?> get props => [locale];
+  List<Object?> get props => <Object?>[locale];
 }

@@ -2,7 +2,7 @@ import 'package:auto_route/annotations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quicky_notes/feature/settings/presentation/manager/settings_bloc.dart';
-import 'package:quicky_notes/localisation/app_localizations.dart';
+import 'package:quicky_notes/core/localisation/app_localizations.dart';
 
 @RoutePage()
 class SettingsPage extends StatelessWidget {
@@ -20,7 +20,6 @@ class SettingsPage extends StatelessWidget {
         child: Column(
           spacing: 20,
           children: <Widget>[
-            Text(loc.greeting),
 
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

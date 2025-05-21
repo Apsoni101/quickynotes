@@ -115,4 +115,13 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get changeLanguage => 'Change Language';
+
+  @override
+  String get adding => '➕ Adding...';
+
+  @override
+  String get loading => '🔄 Loading...';
+
+  @override
+  String get subtitle => '⚡ Fast. Simple. Organized. 📋';
 }

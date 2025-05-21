@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 
 abstract class SettingsRepository {
+  Future<void> saveThemeMode(final ThemeMode themeMode);
   ThemeMode getThemeMode();
-  Future<void> updateThemeMode(ThemeMode mode);
-
-  Locale getLocale();
-  Future<void> updateLocale(Locale locale);
+  Future<void> saveLanguage(final Locale language);
+  Locale getLanguage();
 }

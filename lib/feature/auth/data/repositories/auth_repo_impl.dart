@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:quicky_notes/core/error/failure.dart';
+import 'package:quicky_notes/core/services/error/failure.dart';
 import 'package:quicky_notes/feature/auth/data/data_sources/auth_remote_datasource.dart';
 import 'package:quicky_notes/feature/auth/domain/entities/user_entity.dart';
 import 'package:quicky_notes/feature/auth/domain/repositories/auth_repo.dart';

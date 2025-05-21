@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:quicky_notes/core/constants/app_text_styles.dart';
 import 'package:quicky_notes/core/utlis/date_formatter.dart';
 import 'package:quicky_notes/feature/notes/domain/entities/note_entity.dart';
-import 'package:quicky_notes/localisation/app_localizations.dart';
+import 'package:quicky_notes/core/localisation/app_localizations.dart';
 
 class NoteCard extends StatelessWidget {
   const NoteCard({

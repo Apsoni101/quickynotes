@@ -312,6 +312,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Change Language'**
   String get changeLanguage;
+
+  /// No description provided for @adding.
+  ///
+  /// In en, this message translates to:
+  /// **'➕ Adding...'**
+  String get adding;
+
+  /// No description provided for @loading.
+  ///
+  /// In en, this message translates to:
+  /// **'🔄 Loading...'**
+  String get loading;
+
+  /// No description provided for @subtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'⚡ Fast. Simple. Organized. 📋'**
+  String get subtitle;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

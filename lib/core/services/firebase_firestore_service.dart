@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
-import 'package:quicky_notes/core/error/failure.dart';
+import 'package:quicky_notes/core/services/error/failure.dart';
 
 /// Firestore service similar to network  service
 class FirebaseFirestoreService {
@@ -109,6 +109,7 @@ class FirebaseFirestoreService {
     required final String collectionPath,
   }) => _firestore
       .collection(collectionPath)
+      .orderBy('createdAt', descending: true)
       .snapshots()
       .map((final QuerySnapshot<Map<String, dynamic>> snapshot) {
         final List<Map<String, dynamic>> docs =

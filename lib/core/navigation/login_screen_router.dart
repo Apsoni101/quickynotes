@@ -11,7 +11,7 @@ final AutoRoute loginRoute = AutoRoute(
   page: LoginRouter.page,
   path: RoutePaths.auth,
   children: <AutoRoute>[
-    AutoRoute(page: RegisterRoute.page, initial: true),
-    AutoRoute(page: LoginRoute.page),
+    AutoRoute(page: LoginRoute.page, path: ''),
+    AutoRoute(page: RegisterRoute.page),
   ],
 );

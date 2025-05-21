@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:quicky_notes/core/constants/app_constants.dart';
-import 'package:quicky_notes/core/error/failure.dart';
+import 'package:quicky_notes/core/services/error/failure.dart';
 import 'package:quicky_notes/core/services/firebase_firestore_service.dart';
 import 'package:quicky_notes/core/services/notification_service.dart';
 import 'package:quicky_notes/feature/notes/data/models/note_model.dart';
@@ -28,8 +28,6 @@ class NotesRemoteDataSourceImpl implements NotesRemoteDataSource {
 
   @override
   Future<Either<Failure, String>> addNote(final NoteModel note) async {
-    await notificationService.initialize();
-
     final Either<Failure, String> result = await firestoreService.addDocument(
       collectionPath: AppsConstants.notesCollection,
       data: note.toMap(),

@@ -13,10 +13,9 @@ AutoRoute notesListingRoute(final AuthGuard authGuard) => AutoRoute(
   path: RoutePaths.notesListingTab,
   guards: <AutoRouteGuard>[authGuard],
   children: <AutoRoute>[
-    AutoRoute(page: NotesListingRoute.page,path: ''),
+    AutoRoute(page: NotesListingRoute.page),
     AutoRoute(page: NotesAddingRoute.page, path: RoutePaths.notesAdding),
     AutoRoute(page: NotesDetailRoute.page, path: RoutePaths.notesDetail),
     AutoRoute(page: SettingsRoute.page, path: RoutePaths.settings),
-
   ],
 );

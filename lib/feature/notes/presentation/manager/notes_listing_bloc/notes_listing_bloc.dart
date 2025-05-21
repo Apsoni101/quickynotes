@@ -2,7 +2,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:quicky_notes/core/error/failure.dart';
+import 'package:quicky_notes/core/services/error/failure.dart';
 import 'package:quicky_notes/feature/notes/domain/entities/note_entity.dart';
 import 'package:quicky_notes/feature/notes/domain/use_cases/notes_use_case.dart';
 
@@ -42,3 +42,4 @@ class NotesListBloc extends Bloc<NotesListEvent, NotesListState> {
     await useCases.deleteNote(event.id);
   }
 }
+//on data two api and fav list
